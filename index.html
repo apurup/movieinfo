@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" >
+    <title>Movie Info</title>
+    <link rel="stylesheet" href="movieInfo.css">
+    <link  rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="body" class="container-fluid">
+
+        <div id="form" class="row justify-content-center" style="background: lightgray">
+            <div class="col-12 justify-content-start">
+                <h1 class="display-4 ">Movie Info</h1>
+            </div>
+            <div class="col-12">
+                <hr class="my-4">
+            </div>
+            <form class="container">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputKey">Title</label>
+                        <input type="text" class="form-control" id="inputKey" >
+                        <small id="required" class="form-text text-muted">*required</small>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSearchType">Search By</label>
+                        <select id="inputSearchType" class="form-control">
+                            <option selected>Title</option>
+                            <option>IMDb ID</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputYear">Year</label>
+                        <input type="text" class="form-control" id="inputYear" >
+                        <small id="optional" class="form-text text-muted">*optional</small>
+                    </div>
+                </div>
+                <button id="searchbtn" type="submit" class="btn btn-primary mb-3">Search</button>
+            </form>
+        </div>
+        <div id="display" class="row justify-content-around" style="background: gray;max-height: 100vh;overflow-y: scroll">
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="movieinfo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
