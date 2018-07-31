@@ -32,6 +32,7 @@ $('document').ready(function (){
             url:'https://www.omdbapi.com/?apikey=498f8b3f'+searchString,
             beforeSend: function () {
                 $('#display').empty();
+                $('#display').append(`<img id="loadinggif" src="3.gif" height="64" width="64">`)
             },
             success: (data) => {
                 console.log(data)
@@ -69,6 +70,7 @@ $('document').ready(function (){
               $('#display').prepend(`<p>Time Out Error</p>`)
             },
             complete : function () {
+                $('#loadinggif').remove();
                 //$(window).scrollTop($('#display').offset().top);
                 $('.veiwDetails').click(function () {
                     console.log('on click')
