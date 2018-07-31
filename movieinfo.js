@@ -29,7 +29,7 @@ $('document').ready(function (){
         $.ajax({
             type:'GET',
             dataType:'json',
-            url:'http://www.omdbapi.com/?apikey=498f8b3f'+searchString,
+            url:'https://www.omdbapi.com/?apikey=498f8b3f'+searchString,
             beforeSend: function () {
                 $('#display').empty();
             },
@@ -94,7 +94,7 @@ $('document').ready(function (){
         $.ajax({
             type:'GET',
             dataType:'json',
-            url:'http://www.omdbapi.com/?apikey=498f8b3f&i='+imdbid,
+            url:'https://www.omdbapi.com/?apikey=498f8b3f&i='+imdbid,
             success:(data) =>{
                 console.log(data)
                 let obj=data;
