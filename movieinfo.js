@@ -28,7 +28,7 @@ $('document').ready(function (){
 
         e.preventDefault();
 
-
+        let selectedIndex = $("#inputSearchType").find("option:selected").index()
         if($('#inputKey').val().length===0)
         {
             $('#inputKey').addClass('is-invalid')
@@ -137,43 +137,45 @@ $('document').ready(function (){
                 let obj=data;
                 let poster,string,heading='';
                 string='';
-                for(key in obj)
+                if(data.Response==='True')
                 {
-
-                    console.log(key+':'+obj[key]);
-                    if(key==='Poster')
+                    for(key in obj)
                     {
-                        poster=obj[key];
-                        if(poster==='N/A')
+
+                        console.log(key+':'+obj[key]);
+                        if(key==='Poster')
                         {
-                            poster='images/movie.png';
+                            poster=obj[key];
+                            if(poster==='N/A')
+                            {
+                                poster='images/movie.png';
+                            }
                         }
-                    }
-                    else if(key ==='Title')
-                    {
-                        heading=obj[key];
-                    }
-                    else if(key ==='Ratings')
-                    {
+                        else if(key ==='Title')
+                        {
+                            heading=obj[key];
+                        }
+                        else if(key ==='Ratings')
+                        {
 
-                    }
-                    else if(key ==='Response')
-                    {
+                        }
+                        else if(key ==='Response')
+                        {
 
-                    }
-                    else if(key ==='Website' && obj[key]!=='N/A')
-                    {
+                        }
+                        else if(key ==='Website' && obj[key]!=='N/A')
+                        {
 
                             string = string+`<p  key="${key}" value = "${obj[key]}">${key} : <a href="${obj[key]}">click here</a></p>`
 
-                    }
-                    else {
-                        string = string+`<p  key="${key}" value = "${obj[key]}">${key} : ${obj[key]}</p>`
-                    }
+                        }
+                        else {
+                            string = string+`<p  key="${key}" value = "${obj[key]}">${key} : ${obj[key]}</p>`
+                        }
 
-                }
-                $('.idisplay').remove()
-                $('#display').prepend(`<div class="idisplay container-fluid d-flex flex-lg-row flex-md-row flex-column " style="background: white;overflow-y: scroll">
+                    }
+                    $('.idisplay').remove()
+                    $('#display').prepend(`<div class="idisplay container-fluid d-flex flex-lg-row flex-md-row flex-column " style="background: white;overflow-y: scroll">
                 <img height="300"  class=" mt-5 mr-md-3 d-flex justify-content-center sm-col-12" src="${poster}" alt="Generic placeholder image">
                 <div class=" d-flex flex-column">
                     
@@ -181,6 +183,10 @@ $('document').ready(function (){
                     ${string}
                 </div>
             </div>`)
+                }
+                else {
+                    $('#display').append(`<div class="display-4">No Movies Found!</div>`)
+                }
                 $('#display').scrollTop(0)
             },
             error: function () {
