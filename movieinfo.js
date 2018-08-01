@@ -157,7 +157,15 @@ $('document').ready(function (){
                         }
                         else if(key ==='Ratings')
                         {
-
+                            string=string+`<p>Ratings:</p>`
+                            for (temp of obj.Ratings)
+                            {
+                                console.log(temp)
+                                for (tempkey in temp)
+                                {
+                                    string = string+`<p  class="ml-3" key="${tempkey}" value = "${temp[tempkey]}">${tempkey} : ${temp[tempkey]}</p>`
+                                }
+                            }
                         }
                         else if(key ==='Response')
                         {
